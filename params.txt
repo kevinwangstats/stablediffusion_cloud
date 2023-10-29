@@ -1,0 +1,5 @@
+RTX, ray tracing, most detail, colorful, finely detailed, masterpiece, best quality, ultra-detailed, glowing light, (detailed background, complex background:1.2), night, cherry blossoms, detailed, most detail, park
+
+blur_gaussian
+
+0.8, 1, 1.2, 1.4
