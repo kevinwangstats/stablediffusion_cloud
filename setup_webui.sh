@@ -27,7 +27,7 @@ bash ~/stable-diffusion-webui/webui.sh
 # sudo sh cuda_11.8.0_520.61.05_linux.run
 
 ## Run this locally to do port forwarding
-# gcloud compute ssh kevinwangstats@instance-1 -- -L 7861:localhost:7861
+# gcloud compute ssh --project=voice-387504 --zone=us-west3-b kevinwangstats@instance-1 -- -L 7860:localhost:7860
 
 ## Download ControlNet QC Code model
 # mkdir ~/stable-diffusion-webui/models/ControlNet
@@ -35,3 +35,6 @@ bash ~/stable-diffusion-webui/webui.sh
 
 ## Download Stable-diffusion model
 # wget -P ~/stable-diffusion-webui/models/Stable-diffusion https://civitai.com/api/download/models/148587 --content-disposition
+
+## Run this to transfer images out
+# gcloud compute scp --project=voice-387504 --zone=us-west3-b kevinwangstats@instance-1:~/stablediffusion_cloud/img ~/Desktop
