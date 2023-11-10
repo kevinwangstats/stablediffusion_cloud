@@ -26,10 +26,3 @@ gcloud compute instances create instance-1 \
     --labels=goog-ec-src=vm_add-gcloud \
     --reservation-affinity=any
 ```
-
-```
-# sudo apt-get install gcc git make -y
-# sudo ufw allow 7860/tcp
-
-
-```
