@@ -1,4 +1,4 @@
-RTX, ray tracing, most detail, colorful, finely detailed, masterpiece, best quality, ultra-detailed, glowing light, (detailed background, complex background:1.2), waterfall, tree, island, detailed, most detail, realistic, landscape
+RTX, ray tracing, most detail, colorful, finely detailed, masterpiece, best quality, ultra-detailed, (detailed background, complex background:1.2), waterfall, tree, island, detailed, most detail, realistic, landscape, dark soil
 
 blur_gaussian
 

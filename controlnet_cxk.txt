@@ -1,0 +1,1 @@
+Module: blur_gaussian, Model: None, Weight: 1.7, Resize Mode: Crop and Resize, Low Vram: False, Processor Res: 512, Threshold A: 9, Guidance Start: 0, Guidance End: 1, Pixel Perfect: False, Control Mode: ControlNet is more important

@@ -29,7 +29,7 @@ bash ~/stable-diffusion-webui/webui.sh
 ## Run this locally to do port forwarding
 # gcloud compute ssh --project=voice-387504 --zone=us-west3-b kevinwangstats@instance-1 -- -L 7860:localhost:7860
 
-## Download ControlNet QC Code model
+## Download ControlNet QR Code model
 # mkdir ~/stable-diffusion-webui/models/ControlNet
 # wget -P ~/stable-diffusion-webui/models/ControlNet https://civitai.com/api/download/models/122143 --content-disposition
 
