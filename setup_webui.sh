@@ -8,7 +8,7 @@ sudo apt install -y wget git python3 python3-venv libgl1 libglib2.0-0
 
 PYTHON3_PATH=$(which python3)
 PIP3_PATH=$(which pip3)
-pip3 install opencv-python moviepy pillow
+$PIP3_PATH install opencv-python moviepy pillow
 
 ## Install miniconda3
 # wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
@@ -20,14 +20,19 @@ cd $WORKING_DIR
 git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui
 SDUI_DIR=$WORKING_DIR/stable-diffusion-webui
 
-## Download ControlNet QR Code model
-mkdir $SDUI_DIR/models/ControlNet
-wget -P $SDUI_DIR/models/ControlNet https://civitai.com/api/download/models/122143 --content-disposition
+cd $SDUI_DIR
 
-## Download Landscape stable-diffusion model
-wget -P $SDUI_DIR/models/Stable-diffusion https://civitai.com/api/download/models/148587 --content-disposition
+# Start the webui.sh command with a timeout
+timeout 2400s bash ./webui.sh --no-download-sd-model
 
-bash $SDUI_DIR/webui.sh
+# Check the exit status of the command
+if [ $? -eq 124 ]; then
+    # The command was interrupted due to the timeout
+    echo "Command timed out."
+else
+    # The command completed within 3 minutes or with a different exit status
+    echo "Command completed."
+fi
 
 ## Install xformers (takes a very long time)
 # source ./venv/bin/activate
@@ -43,3 +48,6 @@ bash $SDUI_DIR/webui.sh
 
 ## Run this to transfer images out
 # gcloud compute scp --project=voice-387504 --zone=us-west3-b kevinwangstats@instance-1:~/stablediffusion_cloud/img ~/Desktop
+ 
+## Creating a machine(disk) image
+# gcloud beta compute machine-images create sd-base --project=voice-387504 --description=base\ image\ using\ stable\ diffusion\ setup --source-instance=instance-1 --source-instance-zone=us-west3-b --storage-location=us
