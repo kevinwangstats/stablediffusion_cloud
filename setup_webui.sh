@@ -23,7 +23,7 @@ SDUI_DIR=$WORKING_DIR/stable-diffusion-webui
 cd $SDUI_DIR
 
 # Start the webui.sh command with a timeout
-timeout 2400s bash ./webui.sh --no-download-sd-model
+timeout 300s bash ./webui.sh --no-download-sd-model --xformers
 
 # Check the exit status of the command
 if [ $? -eq 124 ]; then
