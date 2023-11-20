@@ -6,6 +6,8 @@ SDUI_DIR=$WORKING_DIR/stable-diffusion-webui
 MODEL_SD=$SDUI_DIR/models/Stable-diffusion
 MODEL_CN=$SDUI_DIR/models/ControlNet
 
+cp $WORKING_DIR/stablediffusion_cloud/controlnet_cxk.txt $WORKING_DIR/stable-diffusion-webui/extensions/sd-webui-controlnet/presets/
+
 ## Download stable diffusion v1.5
 wget -P $MODEL_SD https://huggingface.co/runwayml/stable-diffusion-v1-5/resolve/main/v1-5-pruned-emaonly.safetensors --content-disposition
 
