@@ -5,7 +5,9 @@ WORKING_DIR=$HOME
 SDUI_DIR=$WORKING_DIR/stable-diffusion-webui
 MODEL_SD=$SDUI_DIR/models/Stable-diffusion
 MODEL_CN=$SDUI_DIR/models/ControlNet
+MODEL_LORA=$SDUI_DIR/models/Lora
 
+mkdir $WORKING_DIR/stable-diffusion-webui/extensions/sd-webui-controlnet/presets
 cp $WORKING_DIR/stablediffusion_cloud/controlnet_cxk.txt $WORKING_DIR/stable-diffusion-webui/extensions/sd-webui-controlnet/presets/
 
 ## Download stable diffusion v1.5
@@ -20,9 +22,3 @@ wget -P $MODEL_SD https://civitai.com/api/download/models/148587 --content-dispo
 
 ## Download chilloutmix human base model
 wget -P $MODEL_SD https://civitai.com/api/download/models/11745  --content-disposition
-
-## Download epic realism human base model
-wget -P $MODEL_SD https://civitai.com/api/download/models/25694  --content-disposition
-
-## Download magic mix human base model
-wget -P $MODEL_SD https://civitai.com/api/download/models/43331  --content-disposition
