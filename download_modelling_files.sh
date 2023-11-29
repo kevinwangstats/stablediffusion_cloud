@@ -19,6 +19,3 @@ wget -P $MODEL_CN https://civitai.com/api/download/models/122143 --content-dispo
 
 ## Download Landscape stable-diffusion model
 wget -P $MODEL_SD https://civitai.com/api/download/models/148587 --content-disposition
-
-## Download chilloutmix human base model
-wget -P $MODEL_SD https://civitai.com/api/download/models/11745  --content-disposition

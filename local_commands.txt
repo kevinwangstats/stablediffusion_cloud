@@ -1,0 +1,29 @@
+# Define the instance name as a variable
+INSTANCE_NAME="instance-1"
+PROJECT_NAME="voice-387504"
+ZONE_NAME="us-west3-b"
+
+# Run this locally to do port forwarding, so the SD UI runs locally at localhost:7860
+gcloud compute ssh \
+    --project=$PROJECT_NAME \
+    --zone=$ZONE_NAME \
+    kevinwangstats@"$INSTANCE_NAME" -- -L 7860:localhost:7860
+
+# SSH into the VM
+gcloud compute ssh \
+	--zone $ZONE_NAME \
+	kevinwangstats@"$INSTANCE_NAME" \
+	--project $PROJECT_NAME
+
+# Copy a file to the VM
+gcloud compute scp \
+	/Users/kevinwang/Downloads/rick.mp4 \
+	--zone $ZONE_NAME \
+	kevinwangstats@"$INSTANCE_NAME":~/ \
+	--project $PROJECT_NAME
+
+# Run this locally to do port forwarding, so the SD UI runs locally at localhost:7860
+gcloud compute ssh \
+    --project=$PROJECT_NAME \
+    --zone=$ZONE_NAME \
+    kevinwangstats@"$INSTANCE_NAME" -- -L 7860:localhost:7860
